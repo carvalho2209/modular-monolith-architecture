@@ -14,6 +14,6 @@ public abstract class DomainEvent : IDomainEvent
         OccurredOnUtc = occurredOnUtc;
     }
 
-    public Guid Id { get; }
-    public DateTime OccurredOnUtc { get; }
+    public Guid Id { get; init; }
+    public DateTime OccurredOnUtc { get; init; }
 }
