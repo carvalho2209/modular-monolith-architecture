@@ -1,19 +1,21 @@
-﻿namespace Evently.Modules.Events.Domain.Abstractions;
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace Evently.Modules.Events.Domain.Abstractions;
 
 public class Result
 {
     public Result(bool isSuccess, Error error)
     {
-        if (isSuccess && error != Error.None || 
+        if (isSuccess && error != Error.None ||
             !isSuccess && error == Error.None)
         {
             throw new ArgumentException("Invalid error", nameof(error));
         }
-        
+
         IsSuccess = isSuccess;
         Error = error;
     }
-    
+
     public bool IsSuccess { get; }
 
     public bool IsFailure => !IsSuccess;
@@ -41,9 +43,10 @@ public class Result<TValue> : Result
         _value = value;
     }
 
+    [NotNull]
     public TValue Value => IsSuccess
         ? _value!
-        : throw new InvalidOperationException("The value of a failure result can't be accessed");
+        : throw new InvalidOperationException("The value of a failure result can't be accessed.");
 
     public static implicit operator Result<TValue>(TValue? value) =>
         value is not null ? Success(value) : Failure<TValue>(Error.NullValue);
