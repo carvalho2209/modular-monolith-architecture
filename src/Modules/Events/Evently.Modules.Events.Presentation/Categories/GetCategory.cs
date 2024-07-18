@@ -1,6 +1,7 @@
-﻿using Evently.Modules.Events.Application.Categories.GetCategory;
-using Evently.Modules.Events.Domain.Abstractions;
-using Evently.Modules.Events.Presentation.ApiResults;
+﻿using Evently.Common.Domain.Abstractions;
+using Evently.Common.Presentation.ApiResults;
+using Evently.Common.Presentation.Endpoints;
+using Evently.Modules.Events.Application.Categories.GetCategory;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
@@ -8,16 +9,16 @@ using Microsoft.AspNetCore.Routing;
 
 namespace Evently.Modules.Events.Presentation.Categories;
 
-internal sealed class GetCategory
+internal sealed class GetCategory : IEndpoint
 {
-    public static void MapEndpoint(IEndpointRouteBuilder app)
+    public void MapEndpoint(IEndpointRouteBuilder app)
     {
         app.MapGet("categories/{id}", async (Guid id, ISender sender) =>
-            {
-                Result<CategoryResponse> result = await sender.Send(new GetCategoryQuery(id));
+        {
+            Result<CategoryResponse> result = await sender.Send(new GetCategoryQuery(id));
 
-                return result.Match(Results.Ok, ApiResults.ApiResults.Problem);
-            })
-            .WithTags(Tags.Categories);
+            return result.Match(Results.Ok, ApiResults.Problem);
+        })
+        .WithTags(Tags.Categories);
     }
 }

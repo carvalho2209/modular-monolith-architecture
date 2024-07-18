@@ -1,7 +1,7 @@
 ﻿using Evently.Modules.Events.Infrastructure.Database;
 using Microsoft.EntityFrameworkCore;
 
-namespace Evently.Api.Extensions;
+namespace Evently.API.Extensions;
 
 internal static class MigrationExtensions
 {
