@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
 
-namespace Evently.Modules.Events.Presentation.Events;
+namespace Evently.Modules.Events.Presentation;
 
 internal static class CreateEvent
 {
@@ -30,7 +30,7 @@ internal static class CreateEvent
     internal sealed class Request
     {
         public Guid CategoryId { get; set; }
-        
+
         public string Title { get; set; }
 
         public string Description { get; set; }

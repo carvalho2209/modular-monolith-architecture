@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
 
-namespace Evently.Modules.Events.Presentation.Events;
+namespace Evently.Modules.Events.Presentation;
 
 internal static class GetEvents
 {

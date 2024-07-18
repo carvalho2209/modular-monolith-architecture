@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <Folder Include="Categories\CreateCategory\" />
+    <Folder Include="Events\CancelEvent\" />
   </ItemGroup>
 
 </Project>
