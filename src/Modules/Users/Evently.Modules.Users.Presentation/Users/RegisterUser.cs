@@ -1,5 +1,5 @@
 ﻿using Evently.Common.Domain.Abstractions;
-using Evently.Common.Presentation.ApiResults;
+using Evently.Common.Presentation.Results;
 using Evently.Common.Presentation.Endpoints;
 using Evently.Modules.Users.Application.Users.RegisterUser;
 using MediatR;

@@ -10,8 +10,7 @@ public sealed class CartService(ICacheService cacheService)
     {
         string cacheKey = CreateCacheKey(customerId);
 
-        Cart cart = await cacheService.GetAsync<Cart>(cacheKey, cancellationToken) ??
-                    Cart.CreateDefault(customerId);
+        Cart cart = await cacheService.GetAsync<Cart>(cacheKey, cancellationToken) ?? Cart.CreateDefault(customerId);
 
         return cart;
     }
