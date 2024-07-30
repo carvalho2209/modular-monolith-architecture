@@ -1,6 +1,6 @@
 ﻿using System.Data.Common;
 
-namespace Evently.Modules.Ticketing.Application.Abstractions.Data;
+namespace Evently.Modules.Ticketing.Application.Abstractions.Abstractions;
 
 public interface IUnitOfWork
 {
