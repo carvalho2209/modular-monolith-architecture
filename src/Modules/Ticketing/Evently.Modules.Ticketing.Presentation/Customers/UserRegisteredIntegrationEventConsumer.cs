@@ -1,13 +1,14 @@
 ﻿using Evently.Common.Application.Exceptions;
-using Evently.Modules.Ticketing.Application.Customers.CreateCustomer;
 using Evently.Common.Domain.Abstractions;
+using Evently.Modules.Ticketing.Application.Customers.CreateCustomer;
 using Evently.Modules.Users.IntegrationEvents;
 using MassTransit;
 using MediatR;
 
 namespace Evently.Modules.Ticketing.Presentation.Customers;
 
-public sealed class UserRegisteredIntegrationEventConsumer(ISender sender) : IConsumer<UserRegisteredIntegrationEvent>
+public sealed class UserRegisteredIntegrationEventConsumer(ISender sender)
+    : IConsumer<UserRegisteredIntegrationEvent>
 {
     public async Task Consume(ConsumeContext<UserRegisteredIntegrationEvent> context)
     {
