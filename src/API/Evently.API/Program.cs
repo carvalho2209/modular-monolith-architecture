@@ -8,7 +8,6 @@ using Evently.Modules.Ticketing.Infrastructure;
 using Evently.Modules.Users.Infrastructure;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
-using Microsoft.Extensions.Configuration;
 using Serilog;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);

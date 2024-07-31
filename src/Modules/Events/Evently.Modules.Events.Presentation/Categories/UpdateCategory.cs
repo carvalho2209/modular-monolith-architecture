@@ -19,6 +19,7 @@ internal sealed class UpdateCategory : IEndpoint
 
             return result.Match(() => Results.Ok(), ApiResults.Problem);
         })
+        .RequireAuthorization()
         .WithTags(Tags.Categories);
     }
 
