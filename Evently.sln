@@ -77,6 +77,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Evently.Modules.Attendance.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Evently.Modules.Attendance.Presentation", "src\Modules\Attendance\Evently.Modules.Attendance.Presentation\Evently.Modules.Attendance.Presentation.csproj", "{205DEC10-8693-42EA-B3CF-E641415AC717}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{35A4A907-2662-4AB3-B2B7-40CFE3BF2A4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evently.ArchitectureTests", "test\Evently.ArchitectureTests\Evently.ArchitectureTests.csproj", "{A8270FF6-99E3-47C5-8B66-F5DA8571A759}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -187,6 +191,10 @@ Global
 		{205DEC10-8693-42EA-B3CF-E641415AC717}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{205DEC10-8693-42EA-B3CF-E641415AC717}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{205DEC10-8693-42EA-B3CF-E641415AC717}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8270FF6-99E3-47C5-8B66-F5DA8571A759}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8270FF6-99E3-47C5-8B66-F5DA8571A759}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8270FF6-99E3-47C5-8B66-F5DA8571A759}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8270FF6-99E3-47C5-8B66-F5DA8571A759}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -224,6 +232,8 @@ Global
 		{3B85EEE1-D81E-46D1-950F-3E92AA71CCCF} = {ABBB276E-9200-4A22-9D95-105F23281961}
 		{86FB8C94-B3B6-4EA0-B4CC-6C7A06345E0E} = {ABBB276E-9200-4A22-9D95-105F23281961}
 		{205DEC10-8693-42EA-B3CF-E641415AC717} = {ABBB276E-9200-4A22-9D95-105F23281961}
+		{35A4A907-2662-4AB3-B2B7-40CFE3BF2A4E} = {B52FC56B-6608-44D2-AFF3-F5A22E083CD6}
+		{A8270FF6-99E3-47C5-8B66-F5DA8571A759} = {35A4A907-2662-4AB3-B2B7-40CFE3BF2A4E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E4DCAA0F-28A6-4D4E-9B7B-0E4B42A4F15F}
