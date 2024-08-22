@@ -2,24 +2,17 @@
 
 namespace Evently.Modules.Events.IntegrationEvents;
 
-public sealed class EventRescheduledIntegrationEvent : IntegrationEvent
+public sealed class EventRescheduledIntegrationEvent(
+    Guid id,
+    DateTime occurredOnUtc,
+    Guid eventId,
+    DateTime startsAtUtc,
+    DateTime? endsAtUtc)
+    : IntegrationEvent(id, occurredOnUtc)
 {
-    public EventRescheduledIntegrationEvent(
-        Guid id,
-        DateTime occurredOnUtc,
-        Guid eventId,
-        DateTime startsAtUtc,
-        DateTime? endsAtUtc)
-        : base(id, occurredOnUtc)
-    {
-        EventId = eventId;
-        StartsAtUtc = startsAtUtc;
-        EndsAtUtc = endsAtUtc;
-    }
+    public Guid EventId { get; init; } = eventId;
 
-    public Guid EventId { get; init; }
+    public DateTime StartsAtUtc { get; init; } = startsAtUtc;
 
-    public DateTime StartsAtUtc { get; init; }
-
-    public DateTime? EndsAtUtc { get; init; }
+    public DateTime? EndsAtUtc { get; init; } = endsAtUtc;
 }
