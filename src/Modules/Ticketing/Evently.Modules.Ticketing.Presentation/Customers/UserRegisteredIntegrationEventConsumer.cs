@@ -1,5 +1,5 @@
 ﻿using Evently.Common.Application.Exceptions;
-using Evently.Common.Domain.Abstractions;
+using Evently.Common.Domain;
 using Evently.Modules.Ticketing.Application.Customers.CreateCustomer;
 using Evently.Modules.Users.IntegrationEvents;
 using MassTransit;

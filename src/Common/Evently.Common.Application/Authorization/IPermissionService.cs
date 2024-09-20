@@ -1,4 +1,4 @@
-﻿using Evently.Common.Domain.Abstractions;
+﻿using Evently.Common.Domain;
 
 namespace Evently.Common.Application.Authorization;
 

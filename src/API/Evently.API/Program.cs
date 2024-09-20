@@ -1,6 +1,6 @@
 using System.Reflection;
-using Evently.API.Extensions;
-using Evently.API.Middleware;
+using Evently.Api.Extensions;
+using Evently.Api.Middleware;
 using Evently.Common.Application;
 using Evently.Common.Infrastructure;
 using Evently.Common.Infrastructure.Configuration;
@@ -12,7 +12,6 @@ using Evently.Modules.Users.Infrastructure;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Serilog;
-
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
@@ -37,7 +36,8 @@ string redisConnectionString = builder.Configuration.GetConnectionStringOrThrow(
 
 builder.Services.AddInfrastructure(
     [
-        TicketingModule.ConfigureConsumers
+        TicketingModule.ConfigureConsumers,
+        AttendanceModule.ConfigureConsumers
     ],
     databaseConnectionString,
     redisConnectionString);
@@ -84,6 +84,8 @@ app.UseAuthorization();
 
 app.MapEndpoints();
 
+#pragma warning disable S6966
 app.Run();
+#pragma warning restore S6966
 
-public partial class Program;
+internal partial class Program;

@@ -1,7 +1,7 @@
 ﻿using Evently.Common.Application.Messaging;
-using Evently.Common.Domain.Abstractions;
+using Evently.Common.Domain;
 using Evently.Modules.Users.Application.Abstractions.Data;
-using Evently.Modules.Users.Application.Identity;
+using Evently.Modules.Users.Application.Abstractions.Identity;
 using Evently.Modules.Users.Domain.Users;
 
 namespace Evently.Modules.Users.Application.Users.RegisterUser;
@@ -22,7 +22,7 @@ internal sealed class RegisterUserCommandHandler(
         {
             return Result.Failure<Guid>(result.Error);
         }
-        
+
         var user = User.Create(request.Email, request.FirstName, request.LastName, result.Value);
 
         userRepository.Insert(user);

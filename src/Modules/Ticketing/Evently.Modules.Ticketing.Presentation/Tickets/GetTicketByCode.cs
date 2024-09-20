@@ -1,4 +1,4 @@
-﻿using Evently.Common.Domain.Abstractions;
+﻿using Evently.Common.Domain;
 using Evently.Common.Presentation.Endpoints;
 using Evently.Common.Presentation.Results;
 using Evently.Modules.Ticketing.Application.Tickets.GetTicket;
@@ -20,7 +20,7 @@ internal sealed class GetTicketByCode : IEndpoint
 
             return result.Match(Results.Ok, ApiResults.Problem);
         })
-        .RequireAuthorization()
+        .RequireAuthorization(Permissions.GetTickets)
         .WithTags(Tags.Tickets);
     }
 }

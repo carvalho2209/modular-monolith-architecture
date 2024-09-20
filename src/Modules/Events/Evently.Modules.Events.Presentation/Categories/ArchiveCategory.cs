@@ -1,4 +1,4 @@
-﻿using Evently.Common.Domain.Abstractions;
+﻿using Evently.Common.Domain;
 using Evently.Common.Presentation.Endpoints;
 using Evently.Common.Presentation.Results;
 using Evently.Modules.Events.Application.Categories.ArchiveCategory;
@@ -19,7 +19,7 @@ internal sealed class ArchiveCategory : IEndpoint
 
             return result.Match(() => Results.Ok(), ApiResults.Problem);
         })
-        .RequireAuthorization()
+        .RequireAuthorization(Permissions.ModifyCategories)
         .WithTags(Tags.Categories);
     }
 }

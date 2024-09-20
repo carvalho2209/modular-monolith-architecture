@@ -1,4 +1,4 @@
-﻿using Evently.Common.Domain.Abstractions;
+﻿using Evently.Common.Domain;
 
 namespace Evently.Common.Application.Messaging;
 
@@ -8,5 +8,7 @@ public abstract class DomainEventHandler<TDomainEvent> : IDomainEventHandler<TDo
     public abstract Task Handle(TDomainEvent domainEvent, CancellationToken cancellationToken = default);
 
     public Task Handle(IDomainEvent domainEvent, CancellationToken cancellationToken = default)
-        => Handle((TDomainEvent)domainEvent, cancellationToken);
+    {
+        return Handle((TDomainEvent)domainEvent, cancellationToken);
+    }
 }

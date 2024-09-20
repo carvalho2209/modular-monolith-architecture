@@ -1,7 +1,7 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using System.Reflection;
+﻿using System.Reflection;
 using Evently.Common.Application.Behaviors;
 using FluentValidation;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Evently.Common.Application;
 

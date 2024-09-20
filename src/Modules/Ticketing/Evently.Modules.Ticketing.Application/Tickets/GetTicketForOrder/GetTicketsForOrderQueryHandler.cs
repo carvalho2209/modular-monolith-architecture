@@ -2,7 +2,7 @@
 using Dapper;
 using Evently.Common.Application.Data;
 using Evently.Common.Application.Messaging;
-using Evently.Common.Domain.Abstractions;
+using Evently.Common.Domain;
 using Evently.Modules.Ticketing.Application.Tickets.GetTicket;
 
 namespace Evently.Modules.Ticketing.Application.Tickets.GetTicketForOrder;

@@ -1,8 +1,8 @@
-﻿using Evently.Common.Domain.Abstractions;
+﻿using Evently.Common.Domain;
 
 namespace Evently.Modules.Events.Domain.Events;
 
-public class EventCanceledDomainEvent(Guid eventId) : DomainEvent
+public sealed class EventCanceledDomainEvent(Guid eventId) : DomainEvent
 {
     public Guid EventId { get; init; } = eventId;
 }

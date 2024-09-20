@@ -1,4 +1,4 @@
-﻿using Evently.Common.Domain.Abstractions;
+﻿using Evently.Common.Domain;
 using Evently.Common.Infrastructure.Serialization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
@@ -8,9 +8,9 @@ namespace Evently.Common.Infrastructure.Outbox;
 
 public sealed class InsertOutboxMessagesInterceptor : SaveChangesInterceptor
 {
-    public override ValueTask<int> SavedChangesAsync(
-        SaveChangesCompletedEventData eventData,
-        int result,
+    public override async ValueTask<InterceptionResult<int>> SavingChangesAsync(
+        DbContextEventData eventData,
+        InterceptionResult<int> result,
         CancellationToken cancellationToken = default)
     {
         if (eventData.Context is not null)
@@ -18,13 +18,12 @@ public sealed class InsertOutboxMessagesInterceptor : SaveChangesInterceptor
             InsertOutboxMessages(eventData.Context);
         }
 
-
-        return base.SavedChangesAsync(eventData, result, cancellationToken);
+        return await base.SavingChangesAsync(eventData, result, cancellationToken);
     }
 
     private static void InsertOutboxMessages(DbContext context)
     {
-        var outBoxMessages = context
+        var outboxMessages = context
             .ChangeTracker
             .Entries<Entity>()
             .Select(entry => entry.Entity)
@@ -45,6 +44,6 @@ public sealed class InsertOutboxMessagesInterceptor : SaveChangesInterceptor
             })
             .ToList();
 
-        context.Set<OutboxMessage>().AddRange(outBoxMessages);
+        context.Set<OutboxMessage>().AddRange(outboxMessages);
     }
 }

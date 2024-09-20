@@ -1,4 +1,4 @@
-﻿using Evently.Common.Domain.Abstractions;
+﻿using Evently.Common.Domain;
 using Evently.Modules.Attendance.Domain.Tickets;
 
 namespace Evently.Modules.Attendance.Domain.Attendees;

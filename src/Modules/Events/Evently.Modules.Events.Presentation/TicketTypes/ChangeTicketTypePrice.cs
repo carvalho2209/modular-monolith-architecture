@@ -1,6 +1,6 @@
-﻿using Evently.Common.Domain.Abstractions;
-using Evently.Common.Presentation.Results;
+﻿using Evently.Common.Domain;
 using Evently.Common.Presentation.Endpoints;
+using Evently.Common.Presentation.Results;
 using Evently.Modules.Events.Application.TicketTypes.UpdateTicketTypePrice;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -19,6 +19,7 @@ internal sealed class ChangeTicketTypePrice : IEndpoint
 
                 return result.Match(Results.NoContent, ApiResults.Problem);
             })
+            .RequireAuthorization(Permissions.ModifyTicketTypes)
             .WithTags(Tags.TicketTypes);
     }
 

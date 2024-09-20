@@ -1,5 +1,4 @@
 ﻿using Evently.Common.Domain;
-using Evently.Common.Domain.Abstractions;
 
 namespace Evently.Common.Presentation.Results;
 

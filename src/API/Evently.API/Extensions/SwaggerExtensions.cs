@@ -1,6 +1,6 @@
 ﻿using Microsoft.OpenApi.Models;
 
-namespace Evently.API.Extensions;
+namespace Evently.Api.Extensions;
 
 internal static class SwaggerExtensions
 {

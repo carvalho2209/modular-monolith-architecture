@@ -2,7 +2,7 @@
 using Dapper;
 using Evently.Common.Application.Data;
 using Evently.Common.Application.Messaging;
-using Evently.Common.Domain.Abstractions;
+using Evently.Common.Domain;
 using Evently.Modules.Events.Domain.Categories;
 
 namespace Evently.Modules.Events.Application.Categories.GetCategory;
@@ -16,12 +16,12 @@ internal sealed class GetCategoryQueryHandler(IDbConnectionFactory dbConnectionF
 
         const string sql =
             $"""
-             Select 
-                 id as {nameof(CategoryResponse.Id)},
-                 name as {nameof(CategoryResponse.Name)},
-                 is_archived as {nameof(CategoryResponse.IsArchived)}
-             From events.categories
-             Where id = @CategoryId
+             SELECT
+                 id AS {nameof(CategoryResponse.Id)},
+                 name AS {nameof(CategoryResponse.Name)},
+                 is_archived AS {nameof(CategoryResponse.IsArchived)}
+             FROM events.categories
+             WHERE id = @CategoryId
              """;
 
         CategoryResponse? category = await connection.QuerySingleOrDefaultAsync<CategoryResponse>(sql, request);

@@ -2,7 +2,7 @@
 
 namespace Evently.Modules.Events.Application.Categories.CreateCategory;
 
-public class CreateCategoryCommandValidator : AbstractValidator<CreateCategoryCommand>
+internal sealed class CreateCategoryCommandValidator : AbstractValidator<CreateCategoryCommand>
 {
     public CreateCategoryCommandValidator()
     {

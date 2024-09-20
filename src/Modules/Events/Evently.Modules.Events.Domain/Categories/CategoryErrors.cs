@@ -1,4 +1,4 @@
-﻿using Evently.Common.Domain.Abstractions;
+﻿using Evently.Common.Domain;
 
 namespace Evently.Modules.Events.Domain.Categories;
 
@@ -11,4 +11,3 @@ public static class CategoryErrors
         "Categories.AlreadyArchived",
         "The category was already archived");
 }
-

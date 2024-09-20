@@ -1,5 +1,4 @@
 ﻿using Evently.Common.Domain;
-using Evently.Common.Domain.Abstractions;
 using Evently.Modules.Attendance.Domain.Attendees;
 using Evently.Modules.Attendance.Domain.Events;
 

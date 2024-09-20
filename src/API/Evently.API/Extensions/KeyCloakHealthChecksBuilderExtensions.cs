@@ -1,6 +1,6 @@
 ﻿using Evently.Common.Infrastructure.Configuration;
 
-namespace Evently.API.Extensions;
+namespace Evently.Api.Extensions;
 
 internal static class KeyCloakHealthChecksBuilderExtensions
 {

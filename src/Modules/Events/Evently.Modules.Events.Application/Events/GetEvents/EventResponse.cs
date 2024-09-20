@@ -8,4 +8,3 @@ public sealed record EventResponse(
     string Location,
     DateTime StartsAtUtc,
     DateTime? EndsAtUtc);
-

@@ -1,8 +1,6 @@
 ﻿namespace Evently.ArchitectureTests.Abstractions;
 
-#pragma warning disable CA1515
 public abstract class BaseTest
-#pragma warning restore CA1515
 {
     protected const string UsersNamespace = "Evently.Modules.Users";
     protected const string UsersIntegrationEventsNamespace = "Evently.Modules.Users.IntegrationEvents";

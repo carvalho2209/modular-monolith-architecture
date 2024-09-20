@@ -1,7 +1,7 @@
 ﻿using System.Security.Claims;
 using Evently.Common.Application.Authorization;
 using Evently.Common.Application.Exceptions;
-using Evently.Common.Domain.Abstractions;
+using Evently.Common.Domain;
 using Evently.Common.Infrastructure.Authentication;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.DependencyInjection;

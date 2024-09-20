@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 using Evently.Common.Application.Messaging;
-using Evently.Common.Domain.Abstractions;
+using Evently.Common.Domain;
 using FluentValidation;
 using FluentValidation.Results;
 using MediatR;

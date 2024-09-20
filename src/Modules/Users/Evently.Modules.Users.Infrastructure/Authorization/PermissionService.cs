@@ -1,5 +1,5 @@
 ﻿using Evently.Common.Application.Authorization;
-using Evently.Common.Domain.Abstractions;
+using Evently.Common.Domain;
 using Evently.Modules.Users.Application.Users.GetUserPermissions;
 using MediatR;
 

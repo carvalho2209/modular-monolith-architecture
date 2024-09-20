@@ -1,12 +1,11 @@
-﻿using Evently.Common.Domain.Abstractions;
+﻿using Evently.Common.Domain;
 
 namespace Evently.Modules.Events.Domain.Categories;
 
 public sealed class Category : Entity
 {
-    public Category()
+    private Category()
     {
-
     }
 
     public Guid Id { get; private set; }

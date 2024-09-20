@@ -1,5 +1,5 @@
 ﻿using Evently.Common.Application.Messaging;
-using Evently.Common.Domain.Abstractions;
+using Evently.Common.Domain;
 using Evently.Modules.Attendance.Application.Abstractions.Data;
 using Evently.Modules.Attendance.Domain.Attendees;
 using Evently.Modules.Attendance.Domain.Tickets;

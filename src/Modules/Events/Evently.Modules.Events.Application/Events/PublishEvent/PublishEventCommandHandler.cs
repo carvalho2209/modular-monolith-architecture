@@ -1,5 +1,5 @@
 ﻿using Evently.Common.Application.Messaging;
-using Evently.Common.Domain.Abstractions;
+using Evently.Common.Domain;
 using Evently.Modules.Events.Application.Abstractions.Data;
 using Evently.Modules.Events.Domain.Events;
 using Evently.Modules.Events.Domain.TicketTypes;
@@ -30,7 +30,7 @@ internal sealed class PublishEventCommandHandler(
 
         if (result.IsFailure)
         {
-            return Result.Failure(result.Error);
+            return result;
         }
 
         await unitOfWork.SaveChangesAsync(cancellationToken);

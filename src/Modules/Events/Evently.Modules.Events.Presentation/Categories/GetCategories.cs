@@ -1,6 +1,6 @@
-﻿using Evently.Common.Domain.Abstractions;
-using Evently.Common.Presentation.Results;
+﻿using Evently.Common.Domain;
 using Evently.Common.Presentation.Endpoints;
+using Evently.Common.Presentation.Results;
 using Evently.Modules.Events.Application.Categories.GetCategories;
 using Evently.Modules.Events.Application.Categories.GetCategory;
 using MediatR;
@@ -20,7 +20,7 @@ internal sealed class GetCategories : IEndpoint
 
             return result.Match(Results.Ok, ApiResults.Problem);
         })
-        .RequireAuthorization()
+        .RequireAuthorization(Permissions.GetCategories)
         .WithTags(Tags.Categories);
     }
 }

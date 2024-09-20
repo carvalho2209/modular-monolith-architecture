@@ -2,7 +2,7 @@
 using Dapper;
 using Evently.Common.Application.Data;
 using Evently.Common.Application.Messaging;
-using Evently.Common.Domain.Abstractions;
+using Evently.Common.Domain;
 using Evently.Modules.Users.Domain.Users;
 
 namespace Evently.Modules.Users.Application.Users.GetUser;
