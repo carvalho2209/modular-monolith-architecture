@@ -36,6 +36,7 @@ string redisConnectionString = builder.Configuration.GetConnectionStringOrThrow(
 
 builder.Services.AddInfrastructure(
     [
+        EventsModule.ConfigureConsumers(redisConnectionString),
         TicketingModule.ConfigureConsumers,
         AttendanceModule.ConfigureConsumers
     ],
@@ -84,8 +85,6 @@ app.UseAuthorization();
 
 app.MapEndpoints();
 
-#pragma warning disable S6966
 app.Run();
-#pragma warning restore S6966
 
-internal partial class Program;
+public partial class Program;

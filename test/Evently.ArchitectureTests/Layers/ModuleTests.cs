@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using Evently.ArchitectureTests.Abstractions;
+using Evently.Common.Application.EventBus;
 using Evently.Modules.Attendance.Domain.Attendees;
 using Evently.Modules.Attendance.Infrastructure;
 using Evently.Modules.Events.Domain.TicketTypes;

@@ -4,7 +4,7 @@ using Evently.Modules.Users.Infrastructure;
 
 namespace Evently.Modules.Users.ArchitectureTests.Abstractions;
 
-internal abstract class BaseTest
+public abstract class BaseTest
 {
     protected static readonly Assembly ApplicationAssembly = typeof(Users.Application.AssemblyReference).Assembly;
 

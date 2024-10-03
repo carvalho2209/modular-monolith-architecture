@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Evently.Api.Extensions;
 
-internal static class MigrationExtensions
+public static class MigrationExtensions
 {
     public static void ApplyMigrations(this IApplicationBuilder app)
     {
