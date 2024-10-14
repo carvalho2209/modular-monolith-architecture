@@ -1,0 +1,3 @@
+VHOST: /
+QUEUE: cancel-event-state-evently
+INDEX: v2

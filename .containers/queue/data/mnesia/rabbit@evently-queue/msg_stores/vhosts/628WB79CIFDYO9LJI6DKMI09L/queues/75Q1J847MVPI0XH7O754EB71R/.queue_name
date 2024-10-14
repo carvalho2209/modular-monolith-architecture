@@ -1,0 +1,3 @@
+VHOST: /
+QUEUE: user-profile-updated-integration-event-evently
+INDEX: v2

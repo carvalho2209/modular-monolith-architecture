@@ -1,0 +1,3 @@
+VHOST: /
+QUEUE: user-registered-integration-event-evently
+INDEX: v2
