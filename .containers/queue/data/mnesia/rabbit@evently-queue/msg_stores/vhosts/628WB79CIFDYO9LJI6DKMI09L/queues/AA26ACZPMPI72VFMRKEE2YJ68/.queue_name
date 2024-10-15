@@ -1,0 +1,3 @@
+VHOST: /
+QUEUE: event-cancellation-started-integration-event-evently-api
+INDEX: v2

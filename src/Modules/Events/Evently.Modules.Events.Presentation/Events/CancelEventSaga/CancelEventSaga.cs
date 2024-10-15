@@ -27,9 +27,9 @@ public sealed class CancelEventSaga : MassTransitStateMachine<CancelEventState>
             When(EventCanceled)
                 .Publish(context =>
                     new EventCancellationStartedIntegrationEvent(
-                        context.Message.Id,
-                        context.Message.OccurredOnUtc,
-                        context.Message.EventId))
+                            context.Message.Id,
+                            context.Message.OccurredOnUtc,
+                            context.Message.EventId))
                 .TransitionTo(CancellationStarted));
 
         During(CancellationStarted,

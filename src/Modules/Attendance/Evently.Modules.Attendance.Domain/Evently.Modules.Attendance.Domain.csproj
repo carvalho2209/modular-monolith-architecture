@@ -5,10 +5,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Update="SonarAnalyzer.CSharp" Version="9.32.0.97167">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
+    <InternalsVisibleTo Include="Evently.Modules.Attendance.UnitTests" />
+    <InternalsVisibleTo Include="Evently.UnitTests" />
   </ItemGroup>
-
+  
 </Project>

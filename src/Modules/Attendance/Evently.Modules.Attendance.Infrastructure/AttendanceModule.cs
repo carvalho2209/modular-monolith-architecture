@@ -47,12 +47,16 @@ public static class AttendanceModule
     {
         registrationConfigurator.AddConsumer<IntegrationEventConsumer<UserRegisteredIntegrationEvent>>()
             .Endpoint(c => c.InstanceId = instanceId);
+
         registrationConfigurator.AddConsumer<IntegrationEventConsumer<UserProfileUpdatedIntegrationEvent>>()
             .Endpoint(c => c.InstanceId = instanceId);
+
         registrationConfigurator.AddConsumer<IntegrationEventConsumer<EventPublishedIntegrationEvent>>()
             .Endpoint(c => c.InstanceId = instanceId);
+
         registrationConfigurator.AddConsumer<IntegrationEventConsumer<TicketIssuedIntegrationEvent>>()
             .Endpoint(c => c.InstanceId = instanceId);
+
         registrationConfigurator.AddConsumer<IntegrationEventConsumer<EventCancellationStartedIntegrationEvent>>()
             .Endpoint(c => c.InstanceId = instanceId);
     }

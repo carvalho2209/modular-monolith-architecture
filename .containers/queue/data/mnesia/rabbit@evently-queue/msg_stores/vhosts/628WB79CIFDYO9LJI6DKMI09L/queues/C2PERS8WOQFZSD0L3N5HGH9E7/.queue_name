@@ -1,0 +1,3 @@
+VHOST: /
+QUEUE: user-registered-integration-event-evently-api_error
+INDEX: v2

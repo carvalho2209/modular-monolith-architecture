@@ -12,7 +12,6 @@ using Evently.Modules.Events.Infrastructure;
 using Evently.Modules.Ticketing.Infrastructure;
 using Evently.Modules.Users.Infrastructure;
 using HealthChecks.UI.Client;
-using MassTransit.RabbitMqTransport.Topology;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Serilog;
 
@@ -94,8 +93,6 @@ app.UseAuthorization();
 
 app.MapEndpoints();
 
-#pragma warning disable S6966
 app.Run();
-#pragma warning restore S6966
 
-internal partial class Program;
+public partial class Program;

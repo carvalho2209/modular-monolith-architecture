@@ -48,15 +48,19 @@ public static class InfrastructureConfiguration
 
         SqlMapper.AddTypeHandler(new GenericArrayHandler<string>());
 
-        services.AddQuartz();
+        services.AddQuartz(configurator =>
+        {
+            var scheduler = Guid.NewGuid();
+            configurator.SchedulerId = $"default-id-{scheduler}";
+            configurator.SchedulerName = $"default-name-{scheduler}";
+        });
 
         services.AddQuartzHostedService(options => options.WaitForJobsToComplete = true);
 
         try
         {
             IConnectionMultiplexer connectionMultiplexer = ConnectionMultiplexer.Connect(redisConnectionString);
-            services.TryAddSingleton(connectionMultiplexer);
-
+            services.AddSingleton(connectionMultiplexer);
             services.AddStackExchangeRedisCache(options =>
                 options.ConnectionMultiplexerFactory = () => Task.FromResult(connectionMultiplexer));
         }
@@ -69,7 +73,7 @@ public static class InfrastructureConfiguration
 
         services.AddMassTransit(configure =>
         {
-            string instanceId = serviceName.ToLowerInvariant().Replace(".", "-");
+            string instanceId = serviceName.ToLowerInvariant().Replace('.', '-');
             foreach (Action<IRegistrationConfigurator, string> configureConsumers in moduleConfigureConsumers)
             {
                 configureConsumers(configure, instanceId);

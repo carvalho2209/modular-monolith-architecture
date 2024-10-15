@@ -1,4 +1,4 @@
-{
+﻿{
   "Ticketing": {
     "Outbox": {
       "IntervalInSeconds": 5,

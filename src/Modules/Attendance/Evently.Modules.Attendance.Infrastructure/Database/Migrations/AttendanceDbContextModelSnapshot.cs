@@ -19,7 +19,7 @@ namespace Evently.Modules.Attendance.Infrastructure.Database.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasDefaultSchema("attendance")
-                .HasAnnotation("ProductVersion", "8.0.4")
+                .HasAnnotation("ProductVersion", "8.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -34,7 +34,7 @@ namespace Evently.Modules.Attendance.Infrastructure.Database.Migrations
                     b.Property<string>("Content")
                         .IsRequired()
                         .HasMaxLength(2000)
-                        .HasColumnType("jsonb")
+                        .HasColumnType("character varying(2000)")
                         .HasColumnName("content");
 
                     b.Property<string>("Error")
@@ -87,7 +87,7 @@ namespace Evently.Modules.Attendance.Infrastructure.Database.Migrations
                     b.Property<string>("Content")
                         .IsRequired()
                         .HasMaxLength(2000)
-                        .HasColumnType("jsonb")
+                        .HasColumnType("character varying(2000)")
                         .HasColumnName("content");
 
                     b.Property<string>("Error")

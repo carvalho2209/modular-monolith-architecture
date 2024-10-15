@@ -1,4 +1,5 @@
-﻿using System.Data.Common;
+﻿using System.Data;
+using System.Data.Common;
 using Evently.Common.Infrastructure.Inbox;
 using Evently.Common.Infrastructure.Outbox;
 using Evently.Modules.Ticketing.Application.Abstractions.Data;
@@ -22,7 +23,7 @@ public sealed class TicketingDbContext(DbContextOptions<TicketingDbContext> opti
 {
     internal DbSet<Customer> Customers { get; set; }
 
-    internal DbSet<Event> Events{ get; set; }
+    internal DbSet<Event> Events { get; set; }
 
     internal DbSet<TicketType> TicketTypes { get; set; }
 

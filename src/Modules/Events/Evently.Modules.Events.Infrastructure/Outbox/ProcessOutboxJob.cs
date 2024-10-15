@@ -37,6 +37,7 @@ internal sealed class ProcessOutboxJob(
         foreach (OutboxMessageResponse outboxMessage in outboxMessages)
         {
             Exception? exception = null;
+
             try
             {
                 IDomainEvent domainEvent = JsonConvert.DeserializeObject<IDomainEvent>(
@@ -45,14 +46,14 @@ internal sealed class ProcessOutboxJob(
 
                 using IServiceScope scope = serviceScopeFactory.CreateScope();
 
-                IEnumerable<IDomainEventHandler> domainEventHandlers = DomainEventHandlersFactory.GetHandlers(
+                IEnumerable<IDomainEventHandler> handlers = DomainEventHandlersFactory.GetHandlers(
                     domainEvent.GetType(),
                     scope.ServiceProvider,
                     Application.AssemblyReference.Assembly);
 
-                foreach (IDomainEventHandler domainEventHandler in domainEventHandlers)
+                foreach (IDomainEventHandler domainEventHandler in handlers)
                 {
-                    await domainEventHandler.Handle(domainEvent);
+                    await domainEventHandler.Handle(domainEvent, context.CancellationToken);
                 }
             }
             catch (Exception caughtException)

@@ -1,4 +1,4 @@
-{
+﻿{
   "Events": {
     "Outbox": {
       "IntervalInSeconds": 5,

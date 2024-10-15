@@ -1,0 +1,3 @@
+VHOST: /
+QUEUE: ticket-type-price-changed-integration-event-evently-api
+INDEX: v2
